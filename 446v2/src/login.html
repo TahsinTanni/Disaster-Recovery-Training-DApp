@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Disaster Recovery Training — Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/truffle-contract/dist/truffle-contract.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h2>Login to Disaster Recovery Training</h2>
+
+  <div id="accountAddress">Connecting wallet...</div>
+  <div id="txStatus"></div>
+
+  <!-- Loader stays visible until JS hides it -->
+  <div id="loader" style="background:#eee;padding:10px;">⏳ Loading Web3 & contract…</div>
+
+  <!-- Main content hidden until contract loads -->
+  <div id="content" style="display:none;">
+    <h3>Login</h3>
+    <form id="loginForm">
+      <label>User ID:</label>
+      <input type="text" id="loginId" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Owner/Admin Info -->
+    <div id="ownerInfo" style="display:none; margin-top:20px;">
+      <h4>Owner Dashboard</h4>
+      <div id="adminApprovalSection">
+        <h5>Pending Admin Requests</h5>
+        <div id="pendingAdmins">⚠️ No requests yet.</div>
+      </div>
+    </div>
+
+    <!-- User Profile Info -->
+    <div id="userInfo" style="display:none; margin-top:20px;">
+      <h4>User Profile</h4>
+      <p><strong>ID:</strong> <span id="p_id"></span></p>
+      <p><strong>Name:</strong> <span id="p_name"></span></p>
+      <p><strong>Age:</strong> <span id="p_age"></span></p>
+      <p><strong>Gender:</strong> <span id="p_gender"></span></p>
+      <p><strong>District:</strong> <span id="p_district"></span></p>
+      <p><strong>Training Interest:</strong> <span id="p_interest"></span></p>
+      <p><strong>Has Completed:</strong> <span id="p_completed"></span></p>
+    </div>
+
+    <!-- Booking Section -->
+    <div id="bookingSection" style="display:none; margin-top:20px;">
+      <h4>📅 Book Training Slot</h4>
+      <div id="trainerSlots">⚠️ Trainer slots will appear here.</div>
+    </div>
+
+    <!-- Feature 2: Admin Panel -->
+    <div id="adminPanel" style="display:none; margin-top:20px; border:1px solid #ccc; padding:10px;">
+      <h4>🛠️ Admin Panel — Update Participant</h4>
+
+      <!-- Participant selection -->
+      <label>Select Participant:</label>
+      <select id="updateParticipantId">
+        <option value="">--Select Participant--</option>
+        <!-- Options populated dynamically from JS -->
+      </select>
+      <br/><br/>
+
+      <!-- Training Interest -->
+      <label>New Training Interest:</label>
+      <select id="newInterest">
+        <option value="">--Select Interest--</option>
+        <option value="1">First Aid</option>
+        <option value="2">Shelter Rebuild</option>
+        <option value="3">Food Safety</option>
+      </select>
+      <br/><br/>
+
+      <!-- Completion checkbox -->
+      <label><input type="checkbox" id="newCompleted"> Mark Training as Completed</label>
+      <br/><br/>
+
+      <!-- Update button -->
+      <button id="adminUpdateBtn">Update Participant</button>
+    </div>
+
+    <!-- Feature 4: Training Schedule -->
+    <div id="scheduleSection" style="margin-top:20px; border:1px solid #ccc; padding:10px;">
+      <h4>📖 Training Schedule</h4>
+      <button id="viewScheduleBtn">Load Schedule</button>
+      <div id="scheduleTable" style="margin-top:10px;"></div>
+    </div>
+
+    <!-- Feature 5: Search Participants -->
+    <div id="searchSection" style="margin-top:20px; border:1px solid #ccc; padding:10px;">
+      <h4>🔍 Search Participants by District</h4>
+      <input type="text" id="searchDistrict" placeholder="Enter district">
+      <button id="searchBtn">Search</button>
+      <div id="searchResult" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+  <br/>
+  <a href="index.html">New user? Register here</a>
+</body>
+</html>
+
