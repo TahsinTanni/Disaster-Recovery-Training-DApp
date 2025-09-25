@@ -5,7 +5,7 @@ This project demonstrates how blockchain can ensure **transparency, security, an
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 1. [Features](#-features)  
 2. [Project Structure](#-project-structure)  
 3. [Requirements](#-requirements)  
@@ -47,7 +47,7 @@ This project demonstrates how blockchain can ensure **transparency, security, an
 
 ---
 
-## 📋 Requirements
+## Requirements
 Make sure you have the following installed:
 - [Node.js](https://nodejs.org/) (v16 or above recommended)
 - [Truffle](https://trufflesuite.com/truffle/)
@@ -60,7 +60,7 @@ Make sure you have the following installed:
 Clone the repository and install dependencies:
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/TahsinTanni/Disaster-Recovery-Training-DApp.git
 cd 446v2
 npm install
 ```
